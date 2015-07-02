@@ -6,4 +6,8 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
+  this.route("posts", function(){
+    this.route("postOne", { path: "/post-one"});
+    this.route("postTwo", { path: "/post-two"});
+  });
 });
