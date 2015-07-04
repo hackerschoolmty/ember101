@@ -3,7 +3,6 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model: function() {
     return this.store.createRecord("article", {
-      state: "borrowed",
       friend: this.modelFor("friends.show")
     });
   },
@@ -14,7 +13,7 @@ export default Ember.Route.extend({
       var model = this.modelFor("articles.new");
 
       model.save().then(function() {
-        this.transitionTo("articles");
+        _this.transitionTo("articles");
       });
     },
 
