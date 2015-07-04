@@ -1,0 +1,20 @@
+body {
+  display: block;
+  text-align: center;
+  color: #333;
+  background: #fff;
+  margin: 80px auto;
+  width: 100%;
+}
+
+nav a {
+  height: auto;
+}
+
+table {
+  width: 100%;
+}
+
+fieldset {
+  border: none;
+}
