@@ -44,3 +44,4 @@ http://api.ember-cli-101.com. The following are the API end-points:
 * Delete a friend.
 * View friend's articles (nested).
 * Lend articles.
+* Mark article as returned.
