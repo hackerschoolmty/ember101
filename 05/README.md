@@ -45,3 +45,9 @@ http://api.ember-cli-101.com. The following are the API end-points:
 * View friend's articles (nested).
 * Lend articles.
 * Mark article as returned.
+* Autosave article when modifying status.
+* Bonus:
+  * Implement deactivate methods on routes.
+  * Implement server-side validations on forms.
+  * Integrate Bootstrap and improve design.
+  * Deploy to Divshot.
