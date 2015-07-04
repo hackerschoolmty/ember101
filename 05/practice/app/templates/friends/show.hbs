@@ -1,0 +1,10 @@
+<div class="friend-profile">
+  <p>{{model.firstName}}</p>
+  <p>{{model.lastName}}</p>
+  <p>{{model.email}}</p>
+  <p>{{model.twitter}}</p>
+  <p>{{link-to "Edit info" "friends.edit" model}}</p>
+  <p><button {{action "delete" model}}>Delete</button></p>
+  <p>{{link-to "Back to friends" "friends.index"}}</p>
+</div>
+
