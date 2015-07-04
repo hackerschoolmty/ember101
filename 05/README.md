@@ -42,5 +42,5 @@ http://api.ember-cli-101.com. The following are the API end-points:
 * View a friend profile.
 * Update a friend profile.
 * Delete a friend.
-* View user's articles (nested).
-* Lend articles
+* View friend's articles (nested).
+* Lend articles.
