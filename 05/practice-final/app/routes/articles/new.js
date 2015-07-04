@@ -11,10 +11,15 @@ export default Ember.Route.extend({
     save: function() {
       var _this = this;
       var model = this.modelFor("articles.new");
+      var controller = this.controllerFor("articles/new");
 
-      model.save().then(function() {
-        _this.transitionTo("articles");
-      });
+      if (controller.get("isValid")) {
+        model.save().then(function() {
+          _this.transitionTo("articles");
+        });
+      } else {
+        controller.set("errorMessage", "You have to fill all the fields");
+      }
     },
 
     cancel: function() {
