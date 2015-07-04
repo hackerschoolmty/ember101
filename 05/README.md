@@ -7,22 +7,28 @@ Keep track of items you lend to your friends.
 We'll consume and store our data from a public API under
 http://api.ember-cli-101.com. The following are the API end-points:
 
-|------------------------------|
-| Verb   |   URI Pattern       |
-|-------------------------------
-| GET    | /api/articles       |
-| POST   | /api/articles       |
-| GET    | /api/articles/:id   |
-| PATCH  | /api/articles/:id   |
-| PUT    | /api/articles/:id   |
-| DELETE | /api/articles/:id   |
-| GET    | /api/friends        |
-| POST   | /api/friends        |
-| GET    | /api/friends/:id    |
-| PATCH  | /api/friends/:id    |
-| PUT    | /api/friends/:id    |
-| DELETE | /api/friends/:id    |
-|------------------------------|
+<table>
+  <thead>
+    <tr>
+      <th>Verb</th>
+      <th>URI Pattern</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>GET</td><td>/api/articles</td></tr>
+    <tr><td>POST</td><td>/api/articles</td></tr>
+    <tr><td>GET</td><td>/api/articles/:id</td></tr>
+    <tr><td>PATCH</td><td>/api/articles/:id</td></tr>
+    <tr><td>PUT</td><td>/api/articles/:id</td></tr>
+    <tr><td>DELETE</td><td>/api/articles/:id</td></tr>
+    <tr><td>GET</td><td>/api/friends</td></tr>
+    <tr><td>POST</td><td>/api/friends</td></tr>
+    <tr><td>GET</td><td>/api/friends/:id</td></tr>
+    <tr><td>PATCH</td><td>/api/friends/:id</td></tr>
+    <tr><td>PUT</td><td>/api/friends/:id</td></tr>
+    <tr><td>DELETE</td><td>/api/friends/:id</td></tr>
+  </tbody>
+</table>
 
 ## Initial configuration
 
