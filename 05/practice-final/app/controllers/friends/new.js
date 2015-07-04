@@ -1,17 +1,7 @@
-import Ember from 'ember';
+import FriendsBaseController from './base';
 
-export default Ember.Controller.extend({
+export default FriendsBaseController.extend({
   actions: {
-    save: function() {
-      var self = this;
-
-      this.get('model').save().then(function(friend) {
-        self.transitionToRoute('friend', friend);
-      });
-
-      return false;
-    },
-
     cancel: function() {
       this.transitionToRoute('friends');
       return false;
