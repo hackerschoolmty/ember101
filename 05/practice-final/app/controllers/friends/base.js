@@ -6,7 +6,7 @@ export default Ember.Controller.extend({
       var self = this;
 
       this.get('model').save().then(function(friend) {
-        self.transitionToRoute('friend', friend);
+        self.transitionToRoute('friends.show', friend);
       });
 
       return false;

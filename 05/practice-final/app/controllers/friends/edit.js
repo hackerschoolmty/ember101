@@ -3,7 +3,7 @@ import FriendsBaseController from './base';
 export default FriendsBaseController.extend({
   actions: {
     cancel: function() {
-      this.transitionToRoute('friend', this.get('model'));
+      this.transitionToRoute('friends.show', this.get('model'));
       return false;
     }
   }
