@@ -1,4 +1,5 @@
-<form {{action "save" model on="submit"}}>
+<form {{action "save" controller model on="submit"}}>
+  <h2 class="error">{{errorMessage}}</h2>
   <fieldset>
     {{input value=model.firstName placeholder="First Name"}}
     {{input value=model.lastName placeholder="Last Name"}}

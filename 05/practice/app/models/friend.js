@@ -5,6 +5,7 @@ export default DS.Model.extend({
   lastName: DS.attr("string"),
   email: DS.attr("string"),
   twitter: DS.attr("string"),
+  articles: DS.hasMany("article"),
 
   fullName: function(){
     return this.get("firstName") + " " + this.get("lastName");

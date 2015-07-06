@@ -6,19 +6,6 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    save: function(model){
-      var self = this;
-
-      model.save().then(function(friend) {
-        self.transitionTo('friends.show', friend);
-      },
-      function(error){
-        alert(error);
-      });
-
-      return false;
-    },
-
     delete: function(friend) {
       var self = this;
 
