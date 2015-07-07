@@ -4,5 +4,6 @@ export default DS.Model.extend({
   createdAt: DS.attr("date"),
   description: DS.attr("string"),
   notes: DS.attr("string"),
-  friend: DS.belongsTo("friend")
+  friend: DS.belongsTo("friend"),
+  state: DS.attr("string")
 });

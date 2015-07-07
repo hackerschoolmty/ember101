@@ -3,16 +3,13 @@
     <tr>
       <th>Description</th>
       <th>Borrowed since</th>
-      <th></th>
-      <th></th>
+      <th>Status</th>
     </tr>
   </thead>
   <tbody>
     {{#each model as |article|}}
-      <tr>
-        <td>{{article.description}}</td>
-        <td>{{article.createdAt}}</td>
-      </tr>
+      {{"articles/article-row" article=article
+        articleStates=articleStates save="save"}}
     {{/each}}
   </tbody>
 </table>
