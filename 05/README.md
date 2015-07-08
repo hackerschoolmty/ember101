@@ -1,53 +1,23 @@
-# Borrowers App
+# HSNEWS Web Client
 
-Keep track of items you lend to your friends.
+Share links and collaborate with your Hacker School mates.
 
 ## Backend
 
-We'll consume and store our data from a public API under
-http://api.ember-cli-101.com. The following are the API end-points:
+We'll user our own installation of [HSNEWS](https://github.com/hackerschoolmty/hsnews) 
+Rails app.
 
-<table>
-  <thead>
-    <tr>
-      <th>Verb</th>
-      <th>URI Pattern</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td>GET</td><td>/api/articles</td></tr>
-    <tr><td>POST</td><td>/api/articles</td></tr>
-    <tr><td>GET</td><td>/api/articles/:id</td></tr>
-    <tr><td>PATCH</td><td>/api/articles/:id</td></tr>
-    <tr><td>PUT</td><td>/api/articles/:id</td></tr>
-    <tr><td>DELETE</td><td>/api/articles/:id</td></tr>
-    <tr><td>GET</td><td>/api/friends</td></tr>
-    <tr><td>POST</td><td>/api/friends</td></tr>
-    <tr><td>GET</td><td>/api/friends/:id</td></tr>
-    <tr><td>PATCH</td><td>/api/friends/:id</td></tr>
-    <tr><td>PUT</td><td>/api/friends/:id</td></tr>
-    <tr><td>DELETE</td><td>/api/friends/:id</td></tr>
-  </tbody>
-</table>
-
-## Initial configuration
-
-* Specifying our own adapter.
-* Start the server with option `--proxy http://api.ember-cli-101.com`
+      $ cd hsnews
+      $ foreman start
 
 ## Features
 
-* List our friends.
-* Add a new friend.
-* View a friend profile.
-* Update a friend profile.
-* Delete a friend.
-* View friend's articles (nested).
-* Lend articles.
-* Mark article as returned.
-* Autosave article when modifying status.
-* Bonus:
-  * Implement deactivate methods on routes.
-  * Implement server-side validations on forms.
-  * Integrate Bootstrap and improve design.
-  * Deploy to Divshot.
+* List links
+* Create links
+* Update links
+* Delete links
+* Authentication
+* Sign up
+* Comment on links
+* Vote on links
+* See link's comments

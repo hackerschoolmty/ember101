@@ -1,47 +1,53 @@
-# Transitioning and redirecting
+# Borrowers App
 
-Calling `transitionTo` from a route or `transitionToRoute` from a controller will stop any transition currently in progress and start a new one, functioning as a redirect. `transitionTo` takes parameters and behaves exactly like the `link-to` helper:
+Keep track of items you lend to your friends.
 
-* If you transition into a route without dynamic segments that route's model hook will always run.
+## Backend
 
-* If the new route has dynamic segments, you need to pass either a model or an identifier for each segment. Passing a model will skip that segment's `model` hook. Passing an identifier will run the `model` hook and you'll be able to access the identifier in the params.
+We'll consume and store our data from a public API under
+http://api.ember-cli-101.com. The following are the API end-points:
 
+<table>
+  <thead>
+    <tr>
+      <th>Verb</th>
+      <th>URI Pattern</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>GET</td><td>/api/articles</td></tr>
+    <tr><td>POST</td><td>/api/articles</td></tr>
+    <tr><td>GET</td><td>/api/articles/:id</td></tr>
+    <tr><td>PATCH</td><td>/api/articles/:id</td></tr>
+    <tr><td>PUT</td><td>/api/articles/:id</td></tr>
+    <tr><td>DELETE</td><td>/api/articles/:id</td></tr>
+    <tr><td>GET</td><td>/api/friends</td></tr>
+    <tr><td>POST</td><td>/api/friends</td></tr>
+    <tr><td>GET</td><td>/api/friends/:id</td></tr>
+    <tr><td>PATCH</td><td>/api/friends/:id</td></tr>
+    <tr><td>PUT</td><td>/api/friends/:id</td></tr>
+    <tr><td>DELETE</td><td>/api/friends/:id</td></tr>
+  </tbody>
+</table>
 
-## Before model is known
+## Initial configuration
 
-```js
-Router.map(function() {
-  this.route('posts');
-});
-```
+* Specifying our own adapter.
+* Start the server with option `--proxy http://api.ember-cli-101.com`
 
-```js
-// app/routes/index.js
+## Features
 
-export default Ember.Route.extend({
-  beforeModel: function() {
-    this.transitionTo('posts');
-  }
-});
-```
-
-## After the model is known
-
-```js
-Router.map(function() {
-  this.route('posts');
-  this.route('post', { path: '/post/:post_id' });
-});
-```
-
-```js
-// app/routes/posts.js
-
-export default Ember.Route.extend({
-  afterModel: function(posts, transition) {
-    if (posts.get('length') === 1) {
-      this.transitionTo('post', posts.get('firstObject'));
-    }
-  }
-});
-```
+* List our friends.
+* Add a new friend.
+* View a friend profile.
+* Update a friend profile.
+* Delete a friend.
+* View friend's articles (nested).
+* Lend articles.
+* Mark article as returned.
+* Autosave article when modifying status.
+* Bonus:
+  * Implement deactivate methods on routes.
+  * Implement server-side validations on forms.
+  * Integrate Bootstrap and improve design.
+  * Deploy to Divshot.
