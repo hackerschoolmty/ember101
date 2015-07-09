@@ -16,6 +16,18 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    "simple-auth": {
+      authorizer: 'simple-auth-authorizer:devise',
+      routeAfterAuthentication: 'links',
+      routeIfAlreadyAuthenticated: 'links'
+    },
+
+    "simple-auth-devise": {
+      resourceName: 'sessions',
+      tokenAttributeName: 'token',
+      identificationAttributeName: 'email'
     }
   };
 
@@ -29,7 +41,10 @@ module.exports = function(environment) {
 
     ENV.contentSecurityPolicy = {
       'connect-src': "'self' http://localhost:5000"
-    }
+    };
+
+    ENV["simple-auth"].crossOriginWhitelist = [ENV.APP['apiBaseURL']];
+    ENV["simple-auth-devise"].serverTokenEndpoint = ENV.APP['apiURL'] + '/sessions';
   }
 
   if (environment === 'test') {
@@ -46,15 +61,19 @@ module.exports = function(environment) {
 
   if (environment === 'staging') {
     ENV.APP.apiBaseURL = 'https://staging-hsnews.herokuapp.com';
+
+    ENV["simple-auth"].crossOriginWhitelist = [ENV.APP['apiBaseURL']];
+    ENV["simple-auth-devise"].serverTokenEndpoint = ENV.APP['apiURL'] + '/sessions';
   }
 
   if (environment === 'production') {
     ENV.APP.apiBaseURL = 'https://production-hsnews.herokuapp.com';
+
+    ENV["simple-auth"].crossOriginWhitelist = [ENV.APP['apiBaseURL']];
+    ENV["simple-auth-devise"].serverTokenEndpoint = ENV.APP['apiURL'] + '/sessions';
   }
 
-  ENV['simple-auth-devise'] = {
-    resourceName: 'sessions'
-  };
+  ENV.APP.apiURL = ENV.APP.apiBaseURL + "/v1"
 
   return ENV;
 };
