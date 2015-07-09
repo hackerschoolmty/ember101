@@ -27,8 +27,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.APP.apiBaseURL = 'http://localhost:5000';
 
-    contentSecurityPolicy = {
-      'connect-src': "'self' http://localhost:5000",
+    ENV.contentSecurityPolicy = {
+      'connect-src': "'self' http://localhost:5000"
     }
   }
 
