@@ -28,12 +28,7 @@ module.exports = function(environment) {
     ENV.APP.apiBaseURL = 'http://localhost:5000';
 
     contentSecurityPolicy = {
-      'script-src': "'self'",
-      'font-src': "'self'",
       'connect-src': "'self' http://localhost:5000",
-      'img-src': "'self'",
-      'style-src': "'self'",
-      'media-src': "'self'"
     }
   }
 
@@ -56,6 +51,10 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.APP.apiBaseURL = 'https://production-hsnews.herokuapp.com';
   }
+
+  ENV['simple-auth-devise'] = {
+    resourceName: 'sessions'
+  };
 
   return ENV;
 };
