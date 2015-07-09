@@ -25,6 +25,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.APP.apiBaseURL = 'http://localhost:5000';
   }
 
   if (environment === 'test') {
@@ -39,8 +40,12 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-  if (environment === 'production') {
+  if (environment === 'staging') {
+    ENV.APP.apiBaseURL = 'https://staging-hsnews.herokuapp.com';
+  }
 
+  if (environment === 'production') {
+    ENV.APP.apiBaseURL = 'https://production-hsnews.herokuapp.com';
   }
 
   return ENV;
