@@ -26,6 +26,15 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.APP.apiBaseURL = 'http://localhost:5000';
+
+    contentSecurityPolicy = {
+      'script-src': "'self'",
+      'font-src': "'self'",
+      'connect-src': "'self' http://localhost:5000",
+      'img-src': "'self'",
+      'style-src': "'self'",
+      'media-src': "'self'"
+    }
   }
 
   if (environment === 'test') {
