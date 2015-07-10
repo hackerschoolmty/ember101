@@ -25,7 +25,7 @@ module.exports = function(environment) {
     },
 
     "simple-auth-devise": {
-      resourceName: 'sessions',
+      resourceName: 'session',
       tokenAttributeName: 'token',
       identificationAttributeName: 'email'
     }
@@ -44,7 +44,7 @@ module.exports = function(environment) {
     };
 
     ENV["simple-auth"].crossOriginWhitelist = [ENV.APP['apiBaseURL']];
-    ENV["simple-auth-devise"].serverTokenEndpoint = ENV.APP['apiURL'] + '/sessions';
+    ENV["simple-auth-devise"].serverTokenEndpoint = ENV.APP['apiBaseURL'] + '/api/sessions';
   }
 
   if (environment === 'test') {
@@ -63,17 +63,15 @@ module.exports = function(environment) {
     ENV.APP.apiBaseURL = 'https://staging-hsnews.herokuapp.com';
 
     ENV["simple-auth"].crossOriginWhitelist = [ENV.APP['apiBaseURL']];
-    ENV["simple-auth-devise"].serverTokenEndpoint = ENV.APP['apiURL'] + '/sessions';
+    ENV["simple-auth-devise"].serverTokenEndpoint = ENV.APP['apiBaseURL'] + '/api/sessions';
   }
 
   if (environment === 'production') {
     ENV.APP.apiBaseURL = 'https://production-hsnews.herokuapp.com';
 
     ENV["simple-auth"].crossOriginWhitelist = [ENV.APP['apiBaseURL']];
-    ENV["simple-auth-devise"].serverTokenEndpoint = ENV.APP['apiURL'] + '/sessions';
+    ENV["simple-auth-devise"].serverTokenEndpoint = ENV.APP['apiBaseURL'] + '/api/sessions';
   }
-
-  ENV.APP.apiURL = ENV.APP.apiBaseURL + "/v1"
 
   return ENV;
 };

@@ -1,2 +1,12 @@
 <h1>Login</h1>
-{{outlet}}
+<form {{action 'authenticate' on='submit'}}>
+  <div>
+    {{input id="email" value=identification placeholder='Email'}}
+  </div>
+  <div>
+    {{input id="password" value=password placeholder='Contraseña' type='password'}}
+  </div>
+  <div>
+    <button>Iniciar sesión</button>
+  </div>
+</form>
