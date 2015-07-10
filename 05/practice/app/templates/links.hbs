@@ -1,8 +1,9 @@
 <h1>Links</h1>
-<ul>
+<ul class="list-unstyled">
   {{#each model as |link|}}
     <li>{{link.title}}</li>
     <li>{{link.url}}</li>
   {{/each}}
 </ul>
+
 {{outlet}}

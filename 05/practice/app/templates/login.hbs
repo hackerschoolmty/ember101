@@ -1,12 +1,18 @@
-<h1>Login</h1>
-<form {{action 'authenticate' on='submit'}}>
-  <div>
-    {{input id="email" value=identification placeholder='Email'}}
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <h1>Login</h1>
+    <form {{action 'authenticate' on='submit'}}>
+      <div class="form-group">
+        <div>
+          {{input class="form-control" id="email" value=identification placeholder='Email'}}
+        </div>
+        <div>
+          {{input class="form-control" id="password" value=password placeholder='Contraseña' type='password'}}
+        </div>
+        <div>
+          <button>Iniciar sesión</button>
+        </div>
+      </div>
+    </form>
   </div>
-  <div>
-    {{input id="password" value=password placeholder='Contraseña' type='password'}}
-  </div>
-  <div>
-    <button>Iniciar sesión</button>
-  </div>
-</form>
+</div>

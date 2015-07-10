@@ -4,7 +4,7 @@ import LoginControllerMixin from 'simple-auth/mixins/login-controller-mixin';
 export default Ember.Controller.extend(LoginControllerMixin, {
   actions: {
     authenticate: function(){
-      var self = this
+      var self = this;
 
       var identification = self.get("identification") || "";
       var password = self.get("password") || "";
