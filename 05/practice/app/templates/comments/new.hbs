@@ -1,0 +1,10 @@
+<h2>Add Comment</h2>
+<form>
+  <div class="form-group">
+    {{textarea class="form-control" value=model.content}}
+  </div>
+  <div class="form-element">
+    <a href="#" {{action 'save'}}>Create</a>
+    or {{link-to "Cancel" "comments.index"}}
+  </div>
+</form>

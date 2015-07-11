@@ -5,6 +5,7 @@
       {{link.title}}
       {{link.url}}
       ({{link-to "Edit" "links.edit" link}})
+      ({{link-to "View" "comments.index" link}})
       <a href="#" {{action "delete" link}}>Delete</a>
     </li>
   {{/each}}

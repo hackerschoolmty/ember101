@@ -1,0 +1,5 @@
+<h2>Comments</h2>
+{{link-to "Add Comment" "comments.new"}}
+{{#each model as |comment|}}
+  <p>{{comment.content}}</p>
+{{/each}}
