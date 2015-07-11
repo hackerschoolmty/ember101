@@ -12,4 +12,9 @@ export default Router.map(function() {
     this.route('edit', { path: ":link_id/edit" });
   });
   this.route('login');
+  this.resource('user', function() {});
+
+  this.route('users', function() {
+    this.route('new');
+  });
 });

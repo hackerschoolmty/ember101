@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <form>
+      <div class="form-group">
+        <label>Email</label>
+        {{input class="form-control" id="email" value=email
+          placeholder='Email'}}
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        {{input class="form-control" id="password" value=password
+          placeholder='Password' type="password"}}
+      </div>
+      <div class="form-group">
+        <button {{action 'save'}}
+          class="btn btn-primary btn-lg btn-block">
+          Create Account
+        </button>
+        <p class="text-center">
+          or,
+          {{link-to "Cancel" "links.index"}}
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
