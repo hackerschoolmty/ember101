@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   actions: {
     save: function(){
-      self = this
+      self = this;
 
       return self.get("model").save().then(
         function(results){

@@ -1,0 +1,23 @@
+<form>
+  <div class="form-group">
+    <label>Título</label>
+    {{input class="form-control" id="title" value=model.title
+      placeholder='Título'}}
+  </div>
+  <div class="form-group">
+    <label>URL</label>
+    {{input class="form-control" id="url" value=model.url
+      placeholder='URL'}}
+  </div>
+  <div class="form-group">
+    <button {{action 'save'}}
+      class="btn btn-primary btn-lg btn-block">
+      {{if model.isNew 'Create' 'Update'}}
+      Link
+    </button>
+    <p class="text-center">
+      or,
+      {{link-to "Cancel" "links.index"}}
+    </p>
+  </div>
+</form>

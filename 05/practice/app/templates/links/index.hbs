@@ -1,7 +1,10 @@
 <h1>Links</h1>
 <ul class="list-unstyled">
   {{#each model as |link|}}
-  <li>{{link.title}}</li>
-  <li>{{link.url}}</li>
+    <li>
+      {{link.title}}
+      {{link.url}}
+      ({{link-to "Edit" "links.edit" link}})
+    </li>
   {{/each}}
 </ul>
